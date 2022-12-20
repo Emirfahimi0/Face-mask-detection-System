@@ -63,7 +63,7 @@ form.addEventListener('submit', function (ev) {
         data: oData,
         cache: false,
         contentType: false,
-        enctype: 'multipart/form-data',
+        enc-type: 'multipart/form-data',
         processData: false,
         error: function (data) {
           console.log("upload error", data);
@@ -71,6 +71,7 @@ form.addEventListener('submit', function (ev) {
         },
         success: function (data) {
           console.log(data);
+
         },
     });
     ev.preventDefault();
