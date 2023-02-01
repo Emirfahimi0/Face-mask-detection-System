@@ -1,0 +1,153 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Prototype</title>
+      <link rel="stylesheet" href="static/css/bootstrap.min.css">
+      <link rel="stylesheet" href="static/style/styleform.css">
+      <link rel="stylesheet" href="static/assets/fontawesome-free-6.2.0-web/css/all.css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      <script src="static/js/jquery-3.6.1.min.js"></script>
+      <script src="static/custom/js/index.js"></script>
+   </head>
+   <body>
+      <div class="nav-bar">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+               <a class="navbar-brand" href="#">FACE MASK DETECTION <SYSTEM></SYSTEM></a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#hero-sec">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#testi">Testimonials</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <li><a class="dropdown-item" href="#">Action</a></li>
+                           <li><a class="dropdown-item" href="#">Another action</a></li>
+                           <li>
+                              <hr class="dropdown-divider">
+                           </li>
+                           <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#featured">Featured</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <div class="hero-container" id="hero-sec">
+         <div class="container-fluid ">
+            <div class="row d-flex">
+               <div class="col align-middle">
+                  <div class="px-2 py-2">
+                     <img src="static/assets/images/home.webp" class="img-fluid" alt="...">
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="px-5 py-5 mt-5">
+                     <div class="px-2 py-2 align-middle">
+                        <h4>OBJECT DETECTION WITH YOLOV5</h4>
+                        <p> Face Mask Detection System employs computer vision and already installed IP and CCTV cameras to detect persons without masks. Artificial Network is used by the Face Mask Detection Platform to determine whether a user is wearing a mask.To identify persons without masks, the software may be linked to any IP mask detection camera, old or new.</p>
+                     </div>
+                     <div class="px-2 py-2">
+                        <button type="button" class="btn btn-primary launch" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-microchip"></i> Deploy Detection
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- main container -->
+         <div class="main-container">
+            <div class="container-fluid">
+               ...
+            </div>
+         </div>
+         <!-- Modal -->
+         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-value="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-body">
+                     <div class="text-right"> <i class="fa fa-close close" data-bs-dismiss="modal"></i> </div>
+                     <div class="tabs mt-3">
+                        <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+                           <li class="nav-item" role="presentation"> <a class="nav-link active justify-content-center align-content-center " id="visa-tab" data-bs-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"><i class="fa-solid fa-camera"></i> Live Camera</a> </li>
+                           <li class="nav-item " role="presentation"> <a class="nav-link  justify-content-center align-content-center" id="paypal-tab" data-bs-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"><i class="fa-regular fa-folder-open"></i> Upload Files </a> </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                           <div class="tab-pane fade show active" id="visa" role="tabpanel" aria-labelledby="visa-tab">
+                              <form method="POST" action="/opencam">
+                                 <div class="form-group mb-5">
+                                    <div class="px-5 mt-3">
+                                       <div class="inputbox">
+                                          <h6 class="information mt-4">Please choose model to detect</h6>
+                                          <select class="form-select" aria-label="Default select example" name="model" required>
+                                             <option selected value="5n">YOLOV5n</option>
+                                             <option value="5s">YOLOV5S</option>
+                                             <option value="5m">Yolov5m</option>
+                                             <option value="5l">Yolov5l</option>
+                                          </select>
+                                          <h6 class="information mt-4">Please select input device</h6>
+                                          <div class="form-group">
+                                             <select class="form-select" aria-label="Default select example" name="source" required>
+                                                <option selected value="0">webcam</option>
+                                                <option value="2">external webcam</option>
+                                             </select>
+                                          </div>
+                                          <div class="pay row justify-content-center mt-3"> <button  type="submit" class="btn btn-primary btn-block"  id="detect" >Generate Detect</button> </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
+                              <div class="form-group mb-5">
+                                 <div class="px-5 mt-3">
+                                    <div class="inputbox">
+                                       <h6 class="information mt-4">Please choose model to detect</h6>
+                                       <div class="form-group">
+                                          <select class="form-select" aria-label="Default select example" name="model" id="type" required>
+                                             <option selected value="5n">YOLOV5n</option>
+                                             <option value="5s">YOLOV5S</option>
+                                             <option value="5m">Yolov5m</option>
+                                             <option value="5l">Yolov5l</option>
+                                          </select>
+                                          <label for="imageinput" class="form-label">
+                                             <h6 class="information mt-4">Please upload images or videos</h6>
+                                          </label>
+                                          <input class="form-control form-control-sm" required id="imageinput" name="image" onchange="readUrl(this)" type="file"/>
+                                       </div>
+                                       <div class="pay row justify-content-center mt-3"> <button  type="submit" class="btn btn-primary btn-block" id="send" name="send">Upload</button> </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div id="link" class=" text-center justify-content-center mt-3">
+                                 <a id="download">
+                                 <button type="button" name="send"  class="btn btn-primary btn-sm">Download</button> </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Jquery Script-->
+      <script src="static/js/bootstrap.bundle.js"></script>
+   </body>
+</html>

@@ -1,145 +1,216 @@
+<!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8">
-      <title>Prototype</title>
-      <link rel="stylesheet" href="static/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/style/styleform.css">
-      <link rel="stylesheet" href="static/assets/fontawesome-free-6.2.0-web/css/all.css">
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-      <script src="static/js/jquery-3.6.1.min.js"></script>
-      <script src="static/custom/js/index.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+         rel="stylesheet">
+      <title>Real-Time Object Detection</title>
+      <!-- Bootstrap core CSS -->
+      <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Additional CSS Files -->
+      <link rel="stylesheet" href="static/assets/css/fontawesome.css">
+      <link rel="stylesheet" href="static/assets/css/templatemo-tale-seo-agency.css">
+      <link rel="stylesheet" href="static/assets/css/owl.css">
+      <link rel="stylesheet" href="static/assets/css/animate.css">
+      <link rel="stylesheet" href="static/assets/style/styleform.css">
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+      <!--
+         TemplateMo 582 Tale SEO Agency
+         
+         https://templatemo.com/tm-582-tale-seo-agency
+         
+         -->
    </head>
    <body>
-      <div class="nav-bar">
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-               <a class="navbar-brand" href="#">FACE MASK DETECTION <SYSTEM></SYSTEM></a>
-               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#hero-sec">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#testi">Testimonials</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <li><a class="dropdown-item" href="#">Action</a></li>
-                           <li><a class="dropdown-item" href="#">Another action</a></li>
-                           <li>
-                              <hr class="dropdown-divider">
-                           </li>
-                           <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#featured">Featured</a>
-                     </li>
-                  </ul>
-               </div>
+      <!-- ***** Preloader Start ***** -->
+      <div id="js-preloader" class="js-preloader">
+         <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+               <span></span>
+               <span></span>
+               <span></span>
             </div>
-         </nav>
+         </div>
       </div>
-      <div class="hero-container" id="hero-sec">
-         <div class="container-fluid ">
-            <div class="row d-flex">
-               <div class="col align-middle">
-                  <div class="px-2 py-2">
-                     <img src="static/assets/images/home.webp" class="img-fluid" alt="...">
-                  </div>
-               </div>
-               <div class="col">
-                  <div class="px-5 py-5 mt-5">
-                     <div class="px-2 py-2 align-middle">
-                        <h4>OBJECT DETECTION WITH YOLOV5</h4>
-                        <p> Face Mask Detection System employs computer vision and already installed IP and CCTV cameras to detect persons without masks. Artificial Network is used by the Face Mask Detection Platform to determine whether a user is wearing a mask.To identify persons without masks, the software may be linked to any IP mask detection camera, old or new.</p>
-                     </div>
-                     <div class="px-2 py-2">
-                        <button type="button" class="btn btn-primary launch" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-microchip"></i> Deploy Detection
-                        </button>
-                     </div>
-                  </div>
-               </div>
+      <!-- ***** Preloader End ***** -->
+      <!-- ***** Header Area End ***** -->
+      <div class="main-banner" id="top">
+      <div class="container">
+      <div class="row">
+         <div class="col-lg-7">
+            <div class="caption header-text">
+               <h4>REAL TIME FACE MASK DETECTION</h4>
+               <div class="line-dec"></div>
+               <p>Face Mask Detection System employs computer vision and already installed IP and CCTV cameras to detect persons without masks. Artificial Network is used by the Face Mask Detection Platform to determine
+                  whether a user is wearing a mask.
+               </p>
+               <div class="second-button"> <button type="button" class="btn btn-dark launch" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-microchip"></i> Deploy Detection</button></div>
             </div>
-         </div>
-         <!-- main container -->
-         <div class="main-container">
-            <div class="container-fluid">
-               ...
-            </div>
-         </div>
-         <!-- Modal -->
-         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-value="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-               <div class="modal-content">
-                  <div class="modal-body">
-                     <div class="text-right"> <i class="fa fa-close close" data-bs-dismiss="modal"></i> </div>
-                     <div class="tabs mt-3">
-                        <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
-                           <li class="nav-item" role="presentation"> <a class="nav-link active justify-content-center align-content-center " id="visa-tab" data-bs-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"><i class="fa-solid fa-camera"></i> Live Camera</a> </li>
-                           <li class="nav-item " role="presentation"> <a class="nav-link  justify-content-center align-content-center" id="paypal-tab" data-bs-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"><i class="fa-regular fa-folder-open"></i> Upload Files </a> </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                           <div class="tab-pane fade show active" id="visa" role="tabpanel" aria-labelledby="visa-tab">
-                              <form method="POST" action="/opencam">
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-value="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-body">
+                        <div class="text-right"> <i class="fa fa-close close" data-bs-dismiss="modal"></i> </div>
+                        <div class="tabs mt-3">
+                           <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+                              <li class="nav-item" role="presentation"> <a class="nav-link active justify-content-center align-content-center " id="visa-tab" data-bs-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"><i class="fa-solid fa-camera"></i> Live Camera</a> </li>
+                              <li class="nav-item " role="presentation"> <a class="nav-link  justify-content-center align-content-center" id="paypal-tab" data-bs-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"><i class="fa-regular fa-folder-open"></i> Upload Files </a> </li>
+                           </ul>
+                           <div class="tab-content" id="myTabContent">
+                              <div class="tab-pane fade show active" id="visa" role="tabpanel" aria-labelledby="visa-tab">
+                                 <form method="POST" id="formCamera">
+                                    <div class="form-group mb-5">
+                                       <div class="px-5 mt-3">
+                                          <div class="inputbox">
+                                             <p class="mt-4">Please choose model to detect</p>
+                                             <select class="form-select" aria-label="Default select example" id="model_" required>
+                                                <option selected value="5n">YOLOV5n</option>
+                                                <option value="5s">YOLOv5s</option>
+                                              
+                                             </select>
+                                             <p class="information mt-4">Please select input device</p>
+                                             <div class="form-group">
+                                                <select class="form-select" aria-label="Default select example" id="source_" required>
+                                                   <option value="0">webcam</option>
+                                                   <option  selected value="2">external webcam</option>
+                                                </select>
+                                             </div>
+                                             <div class="form-group">
+                                                <div class="form-check mt-4">
+                                                   <input class="form-check-input" type="radio"   name="load" value="local" checked>
+                                                   <label class="form-check-label" for="exampleRadios1">
+                                                     Load from local
+                                                   </label>
+                                                 </div>
+                                                 <div class="form-check">
+                                                   <input class="form-check-input" type="radio"  name="load" value="Torch">
+                                                   <label class="form-check-label" for="exampleRadios2">
+                                                     Load from Torch Hub
+                                                   </label>
+                                                 </div>
+
+                                             </div>
+                                          
+                                             <div class="pay row justify-content-center mt-5"> <button  type="submit" class="btn btn-primary "  id="detect" onclick="disabledTab()">Generate Detect</button> </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                              <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
                                  <div class="form-group mb-5">
                                     <div class="px-5 mt-3">
                                        <div class="inputbox">
-                                          <h6 class="information mt-4">Please choose model to detect</h6>
-                                          <select class="form-select" aria-label="Default select example" name="model" required>
-                                             <option selected value="5n">YOLOV5n</option>
-                                             <option value="5s">YOLOV5S</option>
-                                             <option value="5m">Yolov5m</option>
-                                             <option value="5l">Yolov5l</option>
-                                          </select>
-                                          <h6 class="information mt-4">Please select input device</h6>
+                                          <p class="information mt-4">Choose model to detect</p>
                                           <div class="form-group">
-                                             <select class="form-select" aria-label="Default select example" name="source" required>
-                                                <option selected value="0">webcam</option>
-                                                <option value="2">external webcam</option>
+                                             <select class="form-select" aria-label="Default select example" name="model" id="type" required>
+                                                <option selected value="5n">YOLOV5n</option>
+                                                <option value="5s">YOLOv5s</option>
+                                              
                                              </select>
+                                             <p class="information mt-4">Upload images or videos</p>
+                                             <input class="form-control form-control-sm" required id="imageinput" name="image" onchange="readUrl(this)" type="file"/>
                                           </div>
-                                          <div class="pay row justify-content-center mt-3"> <button  type="submit" class="btn btn-primary btn-block"  id="detect" >Generate Detect</button> </div>
+                         
+                                          <div class="pay row justify-content-center mt-5"> <button  type="submit" class="btn btn-primary " id="send" name="upload" onclick="disabledTab()">Upload</button> </div>
                                        </div>
                                     </div>
+                                   
+                               
                                  </div>
-                              </form>
+
+                              </div>
+                              <div class="modal-body" id="link">
+                                 <div class="modal-footer" >
+                                           
+                                  <button class="btn btn-primary text-center"  data-bs-target="#database_form" data-bs-toggle="modal" data-bs-dismiss="modal">Upload to Database</button>
+                               
+                            </div>
+                              </div>
                            </div>
-                           <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
-                              <div class="form-group mb-5">
-                                 <div class="px-5 mt-3">
-                                    <div class="inputbox">
-                                       <h6 class="information mt-4">Please choose model to detect</h6>
-                                       <div class="form-group">
-                                          <select class="form-select" aria-label="Default select example" name="model" id="type" required>
-                                             <option selected value="5n">YOLOV5n</option>
-                                             <option value="5s">YOLOV5S</option>
-                                             <option value="5m">Yolov5m</option>
-                                             <option value="5l">Yolov5l</option>
-                                          </select>
-                                          <label for="imageinput" class="form-label">
-                                             <h6 class="information mt-4">Please upload images or videos</h6>
-                                          </label>
-                                          <input class="form-control form-control-sm" required id="imageinput" name="image" onchange="readUrl(this)" type="file"/>
-                                       </div>
-                                       <div class="pay row justify-content-center mt-3"> <button  type="submit" class="btn btn-primary btn-block" id="send" name="send">Upload</button> </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+              
+            </div>
+            <div class="modal fade" id="database_form" data-bs-backdrop="static" data-value="false" tabindex="-1"  aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered">
+
+                  <div class="modal-content"> 
+                     <div class="modal-header"> 
+                        <form  action="POST" id="formData"  enctype="multipart/form-data"> 
+
+                           <div class="form-group mb-5">
+                             <div class="px-5 mt-3">
+                                <div class="inputbox">
+          
+                                   <div class="form-group">
+                                    <div class="pay row justify-content-center mt-5">    <p class="information mt-5"> Upload results of images or videos from OUTPUT folder</p>
                                     </div>
-                                 </div>
-                              </div>
-                              <div id="link" class=" text-center justify-content-center mt-3">
-                                 <a id="download">
-                                 <button type="button" name="send"  class="btn btn-primary btn-sm">Download</button> </a>
-                              </div>
+                                  
+                                      <input class="form-control form-control-sm" required name="image" id="image" type="file"/>
+                                   </div>
+                                   <div class="pay row justify-content-center mt-5"> <button  type="submit" class="btn btn-primary " name="upload" >Upload</button> </div>
+                                </div>
+                             </div>
+                          </div>
+                         </form>
+                     </div>
+                  </div>
+                    
+               </div>
+               
+            </div>
+         </div>
+      </div>
+      <div class="services section" id="services">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 offset-lg-6">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="section-heading">
+                           <h2>We Provide <em>Different Services</em> &amp;
+                              <span>Features</span> For single Stage detection
+                           </h2>
+                           <div class="line-dec"></div>
+                           <p>More information about YOLOv5 repo.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="service-item">
+                           <div class="icon">
+                              <img src="static/assets/images/services-01.jpg" alt="discover SEO" class="templatemo-feature">
                            </div>
+                           <h4>Discover More on Latest YOLOv5 ultralytics</h4>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="service-item">
+                           <div class="icon">
+                              <img src="static/assets/images/services-02.jpg" alt="data analysis" class="templatemo-feature">
+                           </div>
+                           <h4>Train custom data information</h4>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="service-item">
+                           <div class="icon">
+                              <img src="static/assets/images/services-03.jpg" alt="precise data" class="templatemo-feature">
+                           </div>
+                           <h4>Tips for Best Training Results</h4>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="service-item">
+                           <div class="icon">
+                              <img src="static/assets/images/services-04.jpg" alt="SEO marketing" class="templatemo-feature">
+                           </div>
+                           <h4>ClearML Logging</h4>
                         </div>
                      </div>
                   </div>
@@ -147,7 +218,28 @@
             </div>
          </div>
       </div>
-      <!-- Jquery Script-->
-      <script src="static/js/bootstrap.bundle.js"></script>
-   </body>
-</html>
+   
+
+           </body>
+      <footer>
+         <div class="container">
+            <div class="col-lg-12">
+               <p>Copyright © 2036 <a href="#">Emir fahimi</a>. All rights reserved.
+                  <br>Design: <a href="" target="_blank">Bootstrap</a> Distribution: <a
+                     href="">Face mask Detection</a>
+               </p>
+            </div>
+         </div>
+      </footer>
+      <!-- Scripts -->
+      <!-- Bootstrap core JavaScript -->
+      <script src="static/vendor/jquery/jquery.min.js"></script>
+      <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+      <script src="static/assets/js/isotope.min.js"></script>
+      <script src="static/assets/js/owl-carousel.js"></script>
+      <script src="static/assets/js/index.js"></script>
+      <script src="static/assets/js/tabs.js"></script>
+      <script src="static/assets/js/popup.js"></script>
+      <script src="static/assets/js/custom.js"></script>
+
+</html> 

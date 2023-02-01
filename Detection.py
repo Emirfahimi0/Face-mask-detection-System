@@ -37,13 +37,13 @@ class ObjectDetection:
         Loads Yolo5 model from pytorch hub.
         :return: Trained Pytorch model.
         """
-        weights ='best_custom_modelv3.pt'
+   
         
         dnn= False
         data = 'dataset.yaml'
         half = False
 
-        """model = DetectMultiBackend(weights, device=device, dnn=dnn, data=data, fp16=half)"""
+     
         if model_name:
             model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_name, force_reload=True)
         else:
@@ -105,7 +105,7 @@ class ObjectDetection:
         while True:
             ret, frame = cap.read()
             assert ret
-            frame = cv2.resize(frame, (512, 512))
+            frame = cv2.resize(frame, (640, 640))
             start_time = time.perf_counter()
             results = self.score_frame(frame)
             frame = self.plot_boxes(results, frame)
@@ -114,9 +114,9 @@ class ObjectDetection:
 
             cv2.putText(frame, f'FPS: {int(fps)}', (20, 70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 2)
 
-            cv2.imshow("YOLOV5", frame)
+            cv2.imshow("YOLOV5", np.squeeze(results.render()))
 
-            if cv2.waitKey(5) & 0xFF == 27:
+            if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
 
         cap.release()
@@ -124,5 +124,3 @@ class ObjectDetection:
 
 
 # Create a new object and execute.
-detection = ObjectDetection(capture_index=1, model_name='best_custom_modelv3.pt')
-detection()

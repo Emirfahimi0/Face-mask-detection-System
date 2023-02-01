@@ -1,12 +1,15 @@
 
+  var spinner ='<div class="spinner-border text-light" role="status"><span class="visually-hidden"></span></div> Generating'
+  
   window.onload = () =>  {
   $("#send").click(() => {
-    var spinner ='<div class="spinner-border text-light" role="status"><span class="visually-hidden"></span></div> Generating'
+    
     var button_send = $("#send");
     $("#send").prop('disable',true);
     button_send.html(spinner);
     link = $("#link");
     input = $("#imageinput")[0];
+    
      model = $( "#type option:selected" ).val();
      model_use = $( "#type option:selected" ).text();
       console.log(model_use);
@@ -49,6 +52,51 @@
 
 };
 
+var form = document.forms.namedItem("formCamera");
+form.addEventListener('submit', function (ev) {
+
+   var detect = $("#detect");
+    detect.prop('disable',true);
+    detect.html(spinner);
+    var model = $( "#type option:selected" ).val();
+    var source = $('#source_');
+    var load = $("input[type='radio'][name='load']:checked").val();
+    var oData = new FormData(form);
+    oData.append('model', model);
+    oData.append('source', source);
+    oData.append('load', load);
+    $.ajax({
+        url: '/opencam',
+        type: 'POST',
+        data: oData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+          // Show loading
+          $(spinner).show();
+          },
+          error: function (data) {
+            console.log("upload error", data);
+            console.log(data.getAllResponseHeaders());
+          },
+          success: function (data) {
+            console.log(data);
+           
+            
+          },
+          complete: function(){
+            $(spinner).hide();
+            //alert(data);
+            //location.reload();
+         }
+    });
+    ev.preventDefault();
+}, false);
+
+
+
+
 
 var form = document.forms.namedItem("formData");
 form.addEventListener('submit', function (ev) {
@@ -63,7 +111,7 @@ form.addEventListener('submit', function (ev) {
         data: oData,
         cache: false,
         contentType: false,
-        enc-type: 'multipart/form-data',
+        enctype: 'multipart/form-data',
         processData: false,
         error: function (data) {
           console.log("upload error", data);
