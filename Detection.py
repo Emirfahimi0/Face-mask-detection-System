@@ -122,5 +122,3 @@ class ObjectDetection:
         cap.release()
         cv2.destroyAllWindows()
 
-
-# Create a new object and execute.
