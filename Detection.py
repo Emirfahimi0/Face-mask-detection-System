@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import cv2
 import sys
-import IPython
+import torchvision.transforms as T
 
 sys.path.insert(0, './yolov5-master')
 import torch.backends.cudnn as cudnn
@@ -45,7 +45,7 @@ class ObjectDetection:
 
      
         if model_name:
-            model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_name, force_reload=True)
+            model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_name,  force_reload=True)
         else:
             model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
@@ -53,7 +53,7 @@ class ObjectDetection:
 
     def score_frame(self, frame):
         """
-        Takes a single frame as input, and scores the frame using yolo5 model.
+        Takes a single frame as input, and scores the frame using yolov5 model.
         :param frame: input frame in numpy/list/tuple format.
         :return: Labels and Coordinates of objects detected by model in the frame.
         """
@@ -114,7 +114,7 @@ class ObjectDetection:
 
             cv2.putText(frame, f'FPS: {int(fps)}', (20, 70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 2)
 
-            cv2.imshow("YOLOV5", np.squeeze(results.render()))
+            cv2.imshow("YOLOV5",frame)
 
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break

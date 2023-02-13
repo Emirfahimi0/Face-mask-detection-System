@@ -12,6 +12,7 @@ import base64
 from PIL import Image
 sys.path.insert( 0 ,'./yolov5-master')
 import torch.backends.cudnn as cudnn
+import torchvision.transforms as T
 
 from flask import Flask, render_template, request, abort, \
     send_from_directory
@@ -47,7 +48,7 @@ def loadTorchHub(url_link, model, source):
     print('best_'+model+'.pt')
     # Create a new object and execute.
     
-    detection =ObjectDetection (capture_index=source, model_name=custom_model)
+    detection = ObjectDetection (capture_index=source, model_name=custom_model)
     detection()
  
 
@@ -57,10 +58,11 @@ def opencam():
     if request.method == 'POST':
         model = request.form['model']
         source = request.form['source']
+        print("Source = "+source)
         load = request.form['load']
         path = 'static/custom/'
         if load == 'Torch':
-            loadTorchHub(path, model, source)
+            loadTorchHub(path, model, 2)
             return "Evoke camera with OpenCV"
         
         elif load =='local':
@@ -97,26 +99,28 @@ def detect():
 
          #get_file = os.path.join(upload_dir, secure_filename(file.filename))
          #file.save(get_file)
+
         #Load model from torch hub
          model = torch.hub.load('ultralytics/yolov5', 'custom', path=custom_model, force_reload=True)
          img_bytes = file.read()   
+
+         trans = T.Compose([T.Resize([640, 640]),
+                   T.ToTensor()
+                   ])
          img = Image.open(io.BytesIO(img_bytes))
+         img_trans = trans(img)
+         img_trans = img_trans.unsqueeze(0).cuda()
          results = model([img])
+       
          im =  results.ims
          results.render()
          results.show()
          img_savename = f"static/output/{now}.JPEG"
-         #img_base64.save(save_dir=img_savename)    
-         img_base64 = Image.fromarray(im[0]).save(img_savename)
+         Image.fromarray(im[0]).save(img_savename) 
+         #img_base64 = Image.fromarray(im[0]).save(img_savename)
         
     
-         for img_results in results.ims:
-          buffered = BytesIO()
-        
-
-          with open(img_savename,"rb") as result_file:
-
-            BinaryData = result_file.read()
+         
 
     
          # print(base64.b64encode(buffered.getvalue()).decode('utf-8')) # base64 encoded image with results
@@ -139,5 +143,5 @@ def detect():
 
 if__name__ = '__main__'
 app.config['SECRET_KEY'] = 'athris'
-#os.environ['FLASK_DEBUG'] = 'development'
+os.environ['FLASK_DEBUG'] = 'development'
 app.run()
