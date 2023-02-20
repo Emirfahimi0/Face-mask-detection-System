@@ -46,5 +46,5 @@ thop>=0.1.1  # FLOPs computation
 # pycocotools>=2.0  # COCO mAP
 # roboflow
 
-Flask~=2.2.2
+Flask~=2.2.3
 Werkzeug~=2.2.1
